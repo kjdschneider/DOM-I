@@ -1,29 +1,29 @@
 const tens = document.getElementById('secondTens')
-tens.innerHTML = '0';
+tens.textContent = '0';
 const ones = document.getElementById('secondOnes')
-ones.innerHTML = '0';
+ones.textContent = '0';
 const hundredMS = document.getElementById('msHundreds')
-hundredMS.innerHTML = '0';
+hundredMS.textContent = '0';
 const tenMS = document.getElementById('msTens')
-tenMS.innerHTML = '0';
+tenMS.textContent = '0';
 
-let tenMSNum = Number(tenMS.innerHTML);
-let hundredMSNum = Number(hundredMS.innerHTML);
-let onesNum = Number(ones.innerHTML);
-let tensNum = Number(tens.innerHTML);
+let tenMSNum = Number(tenMS.textContent);
+let hundredMSNum = Number(hundredMS.textContent);
+let onesNum = Number(ones.textContent);
+let tensNum = Number(tens.textContent);
 
 // function dontStartYet () {
     const timeFunc = setInterval(function(){
         tenMSNum = tenMSNum + 1;
-        tenMS.innerHTML = tenMSNum.toString();
+        tenMS.textContent = tenMSNum.toString();
         if (tenMSNum >= 9){
             tenMSNum = 0;
             hundredMSNum = hundredMSNum + 1;
-            hundredMS.innerHTML = hundredMSNum.toString();
+            hundredMS.textContent = hundredMSNum.toString();
             if (hundredMSNum >= 9){
                 hundredMSNum = 0;
                 onesNum = onesNum + 1;
-                ones.innerHTML = onesNum.toString();
+                ones.textContent = onesNum.toString();
                 if (onesNum >= 9){
                         clearInterval(timeFunc);
                 }
