@@ -38,5 +38,72 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
+// Nav DOM Manipulation
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const navLinks = Array.from(document.getElementsByTagName('a'));
+for (i=0; i<navLinks.length; i++){
+  navLinks[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
+  //Task 3
+  navLinks[i].style.color = 'green';
+}
+
+const preA = document.createElement('a');
+preA.textContent = 'DOM Stuff';
+const appA = document.createElement('a');
+appA.textContent = 'Other DOM Stuff';
+appA.style.color = 'green';
+preA.style.color = 'green';
+
+document.querySelector('nav').prepend(preA);
+document.querySelector('nav').appendChild(appA);
+
+
+
+// CTA DOM Manipulation
+document.querySelector('h1').textContent = siteContent["cta"]["h1"];
+document.querySelector('button').textContent = siteContent['cta']['button'];
+document.getElementById('cta-img').setAttribute('src', siteContent['cta']['img-src']);
+
+
+// STRETCH --------------------------
+document.querySelector('button').onclick = function (){
+  document.querySelector('.container').style.background = 'lightgray';
+}
+//-----------------------------------
+
+
+
+// Main Content DOM Manipulation
+const h4Titles = document.querySelectorAll('h4');
+h4Titles[0].textContent = siteContent["main-content"]["features-h4"];
+h4Titles[1].textContent = siteContent['main-content']['about-h4'];
+h4Titles[2].textContent = siteContent['main-content']['services-h4'];
+h4Titles[3].textContent = siteContent['main-content']['product-h4'];
+h4Titles[4].textContent = siteContent['main-content']['vision-h4'];
+
+const pTags = document.querySelectorAll('p');
+pTags[0].textContent = siteContent['main-content']['features-content'];
+pTags[1].textContent = siteContent['main-content']['about-content'];
+pTags[2].textContent = siteContent['main-content']['services-content'];
+pTags[3].textContent = siteContent['main-content']['product-content'];
+pTags[4].textContent = siteContent['main-content']['vision-content'];
+
+document.getElementById('middle-img').setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+
+
+
+// Contact DOM Manipulation
+h4Titles[5].textContent = siteContent['contact']['contact-h4'];
+pTags[5].textContent = siteContent['contact']['address'];
+pTags[6].textContent = siteContent['contact']['phone'];
+pTags[7].textContent = siteContent['contact']['email'];
+
+
+
+
+// Footer DOM Manipulation
+pTags[8].textContent = siteContent['footer']['copyright'];
